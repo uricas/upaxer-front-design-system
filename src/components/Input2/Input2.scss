@@ -1,0 +1,45 @@
+$upx-primary: #FC8E56;
+$upx-secondary: #1e579a;
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Figtree', sans-serif;
+
+}
+
+.form-field label {
+  margin-bottom: 0.5rem;
+  color: $upx-primary;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: left;
+    &::after {
+      content: '*';
+      color: $upx-primary;
+      margin-left: 2px;
+    }
+}
+
+.form-field input, .form-field select {
+    background-color: #fff;
+    border: 1px solid #E0E0E0;
+    border-radius: 20px;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    color: #757575;
+    transition: border-color 0.3s ease;
+
+    &::placeholder {
+      color: #BDBDBD;
+    }
+
+    &:hover {
+      border-color: #FFAB91;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: #FF7043;
+    }
+}
