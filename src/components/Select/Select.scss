@@ -1,0 +1,122 @@
+.select {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 291px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+
+  .label-group {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    height: 16px;
+
+    .label-text,
+    .obligatorio {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 16px;
+      color: #E45B1C;
+    }
+  }
+
+  .inputStandard {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 12px;
+    gap: 8px;
+    width: 100%;
+    height: 36px;
+    background: #FFFFFF;
+    border: 1.5px solid #E3E3E3;
+    border-radius: 12px;
+    transition: border-color 0.2s ease;
+    cursor: pointer;
+
+    select {
+      width: 100%;
+      border: none;
+      background: transparent;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 20px;
+      color: #B9AFAE; // Placeholder/Default color
+      cursor: pointer;
+
+      // Change text color when an option is selected
+      &.placeholder-text:valid {
+        color: #434343; // Filled color
+      }
+    }
+
+    .arrow_drop_down {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      .icon {
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid #E45B1C;
+      }
+    }
+  }
+
+  // --- STATES ---
+
+  // HOVER (applies to default and filled states)
+  &:hover .inputStandard {
+    border-color: rgba(254, 117, 53, 0.5);
+  }
+
+  // FOCUS (applies to default and filled states)
+  &:focus-within .inputStandard {
+    border-color: #FE7535;
+  }
+
+  // READONLY ("solo lectura")
+  &.readonly {
+    .inputStandard {
+      background: rgba(239, 239, 239, 0.3); // Light disabled background
+      border-color: #E3E3E3;
+      cursor: default;
+
+      select {
+        color: #434343;
+        cursor: default;
+      }
+
+      .arrow_drop_down {
+        display: none;
+      }
+    }
+
+    // Disable hover/focus effects for readonly
+    &:hover .inputStandard,
+    &:focus-within .inputStandard {
+      border-color: #E3E3E3;
+    }
+  }
+}
+
+// General styling for dropdown options
+option {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #0A0A0A;
+}

@@ -11,6 +11,7 @@
     "build": "webpack --mode production",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "push:github": "git push github feature/init",
     "sync:remotes": "git pull github feature/init && git push origin feature/init"
   },
   "keywords": [],
