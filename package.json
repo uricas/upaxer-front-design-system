@@ -10,7 +10,8 @@
     "start": "webpack serve --open",
     "build": "webpack --mode production",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "sync:remotes": "git pull github feature/init && git push origin feature/init"
   },
   "keywords": [],
   "author": "",
