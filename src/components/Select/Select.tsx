@@ -1,4 +1,5 @@
 import React from 'react';
+import './Select.scss';
 
 interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
     label: string;
